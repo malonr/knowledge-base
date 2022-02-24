@@ -21,31 +21,23 @@ Having users personal information organized in a schema will help us to build a 
 
 # Detailed design
 
+![image](https://user-images.githubusercontent.com/58435018/155622919-25f1a224-4233-4ca4-a104-d4c0c8d0a9d3.png)
+
+After investigating how we should build our schema, Francisco built the schema above. We added new attributes to users such as: currency.
 
 
-This is the bulk of the RFC. Explain the design in enough detail for somebody
-familiar with React to understand, and for somebody familiar with the
-implementation to implement. This should get into specifics and corner-cases,
-and include examples of how the feature is used. Any new terminology should be
-defined here.
+We decided our database should be CA (Consistensy and Availability) . First, Consistensy our users have to be able to  see the same data no matter which node they connect to on the system. Second, Availability because our users have to see their data whenever thay woudl like to. 
+
+We decide to follow a relational BD due to we have identifiers in the previous schema that we allows to do a relation between tables, and we can use the SQL language for manipulating data. 
 
 # Drawbacks
 
-Why should we *not* do this? Please consider:
-
-- implementation cost, both in term of code size and complexity
-- whether the proposed feature can be implemented in user space
-- the impact on teaching people React
-- integration of this feature with other existing and planned features
-- cost of migrating existing React applications (is it a breaking change?)
-
-There are tradeoffs to choosing any path. Attempt to identify them here.
 
 # Alternatives
 
-What other designs have been considered? 
+What other designs have been considered? We could also apply Postgres as our database because is one of the option when chossing CA from the CAP theorem.  
 
-What is the impact of not doing this?
+What is the impact of not doing this? Without a user acount system other teams couldn't work properly without user's personal information such as : Marteking. 
 
 # Adoption strategy
 
@@ -76,6 +68,4 @@ How should this feature be taught to existing C9 developers?
 
 # Unresolved questions
 
-
-Optional, but suggested for first drafts. What parts of the design are still
-TBD?
+We haven't compared MySQL to postgres
